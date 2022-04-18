@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fetch using MySQL and Node.js</title>
+</head>
+<body>
+    <div class="table-data">
+<h2>Display Data using Node.js & MySQL</h2>
+    <table border="1">
+        <tr>
+            <th>id_category</th>
+            <th>id_parent</th>
+            <th>id_shop_default</th>
+            <th>level_depth</th>
+            <th>active</th>
+            <th>date_add</th>
+            <th>date_upd</th>
+            <th>name</th>
+        </tr>
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=i; %></td>
+            <td><%=data.id_category %></td>
+            <td><%=data.id_parent %></td>
+            <td><%=data.id_shop_default %></td>
+            <td><%=data.level_depth %></td>
+            <td><%=data.active %></td>
+            <td><%=data.date_add %></td>
+            <td><%=data.date_upd %></td>
+            <td><%=data.name %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
